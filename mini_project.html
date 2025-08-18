@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head></head>
+</html>
+<title>Mini Project</title>
+<meta charset="UTF-8" />
+</head>
+<body>
+  <body>
+      <h1>Entry-Control through Even Number</h1>
+      <p id="result"></p>
+      <script>
+        function askEvenNumber() {
+          let input;
+          do {
+            input = prompt("Please enter an even number:");
+          } while (
+            input === null ||
+            isNaN(input) ||
+            parseInt(input, 10) % 2 !== 0
+          );
+          document.getElementById("result").textContent =
+            "Welcome! You entered the even number: " + input;
+        }
+
+        window.onload = askEvenNumber;
+      </script>
+    </body>
+</body>
+</html>
+
+

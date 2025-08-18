@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Student Object Display</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        margin: 2em;
+        background: #f6f8fa;
+        color: #222;
+      }
+      #student-info {
+        background: #fff;
+        padding: 1.3em 1.66em;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+        max-width: 300px;
+      }
+      ul {
+        margin: 0.5em 0 0 1.2em;
+        padding: 0;
+        list-style: disc;
+      }
+      strong {
+        color: #333;
+      }
+      h1 {
+        font-size: 2.5em;
+        font-weight: 700;
+        margin-bottom: 1.2em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Student Information</h1>
+    <form id="student-form">
+      <label>
+        Name:
+        <input type="text" id="name" required /> </label
+      ><br /><br />
+      <label>
+        ID:
+        <input type="text" id="id" required /> </label
+      ><br /><br />
+      <label>
+        Department:
+        <input type="text" id="department" required /> </label
+      ><br /><br />
+      <label>Phone: <input type="tel" id="phone" required /></label><br /><br />
+      <button type="button" id="display-btn">Display</button>
+    </form>
+    <div id="student-info"></div>
+
+    <script>
+      // Student object template
+      const student = {
+        name: "",
+        id: "",
+        department: "",
+        phone: "",
+        displayInfo: function () {
+          return `
+                                      <strong>Name:</strong> ${this.name}<br>
+                                      <strong>ID:</strong> ${this.id}<br>
+                                      <strong>Department:</strong> ${this.department}<br>
+      <strong>Phone no.:</strong> ${this.phone}<br>
+                              `;
+        },
+      };
+
+      document.getElementById("display-btn").onclick = function () {
+        student.name = document.getElementById("name").value;
+        student.id = document.getElementById("id").value;
+        student.department = document.getElementById("department").value;
+        student.id = document.getElementById("phone").value;
+        document.getElementById("student-info").innerHTML =
+          student.displayInfo();
+      };
+    </script>
+  </body>
+</html>
